@@ -8,6 +8,21 @@
     - Link to job posting
 
 ## Instructions
-1. `pip3 install -r requirements.txt`
-2. `python3 app.py`
+IMPORTANT: You need to have the correct chromedriver version based on the version of Google chrome installed on your machine. You can dowload the correct verision [here](https://chromedriver.chromium.org/downloads). After you download the driver place it in [`selenium`](https://github.com/nickb210/Workday-Job-Web-Scraper-GUI-Custom-Theme-/tree/master/selenium). 
+```
+1. pip3 install -r requirements.txt
+2. python3 app.py
+```
 
+
+---
+## Demo
+---
+#### Splash Screen
+<img src="./pictures/splash.png" alt="drawing" width="400"/>
+
+#### Search Page
+<img src="./pictures/search.png" alt="drawing" width="400"/>
+
+#### Results Page
+<img src="./pictures/results.png" alt="drawing" width="400"/>
