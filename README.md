@@ -17,14 +17,15 @@ IMPORTANT: You need to have the correct chromedriver version based on the versio
 
 ---
 ## Demo
-
-[![Workday Job Web Scraper GUI Demo](https://res.cloudinary.com/marcomontalbano/image/upload/v1633122288/video_to_markdown/images/youtube--wuIiBdIyqyI-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=wuIiBdIyqyI "Workday Job Web Scraper GUI Demo")
 ---
 #### Splash Screen
-<img src="./pictures/splash.png" alt="drawing" width="400"/>
+<img src="./pictures/splash.png" alt="drawing" width="320"/>
 
 #### Search Page
-<img src="./pictures/search.png" alt="drawing" width="400"/>
+<img src="./pictures/search.png" alt="drawing" width="320"/>
 
 #### Results Page
-<img src="./pictures/results.png" alt="drawing" width="400"/>
+<img src="./pictures/results.png" alt="drawing" width="320"/>
+
+#### Video
+[![Workday Job Web Scraper GUI Demo](https://res.cloudinary.com/marcomontalbano/image/upload/v1633122288/video_to_markdown/images/youtube--wuIiBdIyqyI-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=wuIiBdIyqyI "Workday Job Web Scraper GUI Demo")
