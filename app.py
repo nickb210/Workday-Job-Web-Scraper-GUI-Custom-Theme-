@@ -68,7 +68,7 @@ class App(tk.Tk):
 
         # after 3 seconds remove splash screen window
         self.after(5000, splash.withdraw)
-        
+
         # after 3 seconds show main window
         self.after(5000, self.deiconify)
         
@@ -82,6 +82,7 @@ class App(tk.Tk):
         
         s = Style(theme='my_gui_theme_dark', themes_file=STYLE_JSON)
         s.configure('custom.TButton', font=('Poppins ExtraLight', 18), bg="#00b500")
+        s.configure('my.custom.TButton', font=('Poppins ExtraLight', 10), background="#20272e", borderwidth=0)
         s.configure('custom.TLabel', fg="#aabac8")
         s.configure('custom.TRadiobutton', font=('SF Pro Rounded Thin', 14))
         s.configure('custom.TLabelFrame', bg="white")
@@ -111,6 +112,7 @@ class App(tk.Tk):
         #print(self.shared_data["company_selection"].get())
         if frame_name == "page2":
             page2.job_query(frame)
+            pass
         
         frame.tkraise()
     
@@ -145,7 +147,9 @@ class page1(ttk.Frame):
         company_combobox = ttk.Combobox(self, values=companies, font=('Poppins ExtraLight', 16), width=23, textvariable=self.controller.company_selection)
         company_combobox.place(x=260, y=260)
         
-        search_button = ttk.Button(self, text="Search", width=15, style='custom.TButton', command=lambda: controller.show_frame(page2))
+        img = tk.PhotoImage(file='./icons/arrow_right.png')
+        search_button = ttk.Button(self, text="         Search      ", image=img, compound=tk.RIGHT, width=15, style='custom.TButton', command=lambda: controller.show_frame(page2))
+        search_button.image = img
         search_button.place(x=300, y=330)
         
         footer_text = "Version 1.0 | Made by @NickBrell"
@@ -189,13 +193,23 @@ class page2(ttk.Frame):
         self.link_label = ttk.Label(self, text="text", textvariable=self.link, font=('Poppins ExtraLight', 9))
         self.link_label.place(x=25, y=430, anchor="nw")
         
-        back_button = ttk.Button(self, text="Go Back", width=15, style='custom.TButton', command=lambda: controller.show_frame(page1))
+        img = ImageTk.PhotoImage(file='./icons/arrow_left.png')
+        back_button = ttk.Button(self, text="      Go Back         ", image=img, compound=tk.LEFT, width=15, style='custom.TButton', command=lambda: controller.show_frame(page1))
+        back_button.image = img
         #back_button = ttk.Button(self, text="Go Back", width=15, style='custom.TButton', command=self.job_query)
         back_button.place(x=300, y=485)
+        
+        img_load = Image.open('./icons/help.png')
+        img_help = ImageTk.PhotoImage(img_load)
+        help_button = ttk.Button(self, image=img_help, compound=tk.CENTER, style='my.custom.TButton')
+        
+        help_button.image = img_help
+        help_button.place(x=10, y=10)
         
         footer_text= "Version 1.0 | Made by @NickBrell"
         footer = tk.Label(self, text=footer_text, font=('Poppins ExtraLight', 14), fg="#aabac8", bg="#58427a", anchor="w")
         footer.pack(side="bottom", fill="x", ipadx=40)
+        
     
     def job_query(self):
         job_search_str     = self.controller.search_query.get()
