@@ -102,6 +102,7 @@ class App(tk.Tk):
             frame.grid(row=0, column=0, sticky="NSEW")
             
         
+        # show page 1 
         self.show_frame(page1)
         #self.show_frame(SplashScreen)
     
@@ -152,6 +153,7 @@ class page1(ttk.Frame):
         search_button.image = img
         search_button.place(x=300, y=330)
         
+        # footer
         footer_text = "Version 1.0 | Made by @NickBrell"
         footer = tk.Label(self, text=footer_text, font=('Poppins ExtraLight', 14), fg="#aabac8", bg="#58427a", anchor="w")
         footer.pack(side="bottom", fill="x", ipadx=40)
@@ -206,6 +208,7 @@ class page2(ttk.Frame):
         help_button.image = img_help
         help_button.place(x=10, y=10)
         
+        # footer
         footer_text= "Version 1.0 | Made by @NickBrell"
         footer = tk.Label(self, text=footer_text, font=('Poppins ExtraLight', 14), fg="#aabac8", bg="#58427a", anchor="w")
         footer.pack(side="bottom", fill="x", ipadx=40)
@@ -215,12 +218,13 @@ class page2(ttk.Frame):
         job_search_str     = self.controller.search_query.get()
         company_search_str = self.controller.company_selection.get()
         
+        # run the job search using the string from 'job_search_str'
         search = job_search(job_search_str)
         
         self.tv["column"] = list(search.columns)
         self.tv["show"] = "headings"
         
-        # set column names
+        # set column names and widths
         for column in self.tv["columns"]:
             if column == 'url':
                 self.tv.column(column, width=800)
@@ -237,7 +241,7 @@ class page2(ttk.Frame):
         
         search_rows = search.to_numpy().tolist()
         
-        # inseet each row into TreeView
+        # insert each row into TreeView
         # https://docs.python.org/3/library/tkinter.ttk.html#tkinter.ttk.Treeview.insert
         for row in search_rows:
             self.tv.insert("", "end", values=row)
@@ -245,9 +249,10 @@ class page2(ttk.Frame):
     # function returns link when double clicking on a row in the TreeView
     def selectItem(self, event):
         currentItem = self.tv.item(self.tv.focus())
-        column = self.tv.identify('item', event.x, event.y)
+        column      = self.tv.identify('item', event.x, event.y)
         
-        job = currentItem['values'][0]
+        # get the job name and job URL
+        job  = currentItem['values'][0]
         link = currentItem['values'][-1]
         
         self.link.set(f"Copied '{job}' to clipboard!\nLink:\n{link}")
