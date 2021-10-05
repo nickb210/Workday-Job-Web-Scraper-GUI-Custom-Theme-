@@ -8,10 +8,12 @@
     - Link to job posting
 
 ## Instructions
-IMPORTANT: You need to have the correct chromedriver version based on the version of Google chrome installed on your machine. You can dowload the correct verision [here](https://chromedriver.chromium.org/downloads). After you download the driver place it in [`selenium`](https://github.com/nickb210/Workday-Job-Web-Scraper-GUI-Custom-Theme-/tree/master/selenium) directory. 
+**IMPORTANT**: You need to have the correct chromedriver version based on the version of Google chrome installed on your machine. You can dowload the correct verision [here](https://chromedriver.chromium.org/downloads). After you download the driver place it in [`selenium`](https://github.com/nickb210/Workday-Job-Web-Scraper-GUI-Custom-Theme-/tree/master/selenium) directory. 
 ```
-1. pip3 install -r requirements.txt
-2. python3 app.py
+1. git clone https://github.com/nickb210/Workday-Job-Web-Scraper-GUI-Custom-Theme-.git
+2. cd Workday-Job-Web-Scraper-GUI-Custom-Theme-/
+3. pip3 install -r requirements.txt
+4. python3 app.py
 ```
 
 
