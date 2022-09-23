@@ -119,7 +119,7 @@ def job_search(job_title):
 
     count_jobs = 1
 
-    #my_file = open('/Users/nicholausbrell/Desktop/jobs.txt', 'a')
+    
     for job_id in jobs_dict.keys():
         job_title = jobs_dict[job_id]['job_title']
         job_location = jobs_dict[job_id]['job_location']
